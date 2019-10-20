@@ -8,7 +8,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Album example · Bootstrap</title>
-
+  <link rel="stylesheet" href="{% static "icon/css/font-awesome.min.css" %}">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
@@ -23,6 +23,7 @@
         -ms-user-select: none;
         user-select: none;
       }
+
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -46,6 +47,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'create' %}" ><i class="fa fa-plus" aria-hidden="true"></i></a>
         <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
         <form id="logout" method="POST" action="{% url 'logout' %}">
           {% csrf_token %}
